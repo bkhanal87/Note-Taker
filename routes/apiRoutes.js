@@ -5,7 +5,7 @@ const uniqId = require("uniqid");
 module.exports = (app) => {
     app.get("/api/notes", (req, res) => res.json(notesData));
 
-    app.post("/api/notes", (req,res) => {
+    app.post("/api/notes", (req, res) => {
         req.body["id"] = uniqId();
         notesData.push(req.body)
         res.json(true);
